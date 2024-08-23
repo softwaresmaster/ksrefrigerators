@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Themed Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Black with transparency */
+            backdrop-filter: blur(10px); /* Blur effect */
+            z-index: 1000;
+        }
+        .footer {
+            background-color: #000;
+            border-bottom: 1px solid #444;
+        }
+
+        .nav-link {
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            text-shadow: 0px 0px 10px #fff;
+        }
+
+        .banner {
+            background-image: url('/assets/img/appliance-repair.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner h1 {
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 0px 0px 15px #fff;
+        }
+
+        .btn-custom {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-custom:hover {
+            color: #fff;
+            box-shadow: 0px 0px 15px #fff;
+        }
+
+        .card {
+            background-color: #222;
+            border: 1px solid #444;
+        }
+
+        .card-title,
+        .card-text {
+            color: #fff;
+        }
+
+        #services .row .col-md-3 .card {
+            border-radius: 0.2rem;
+            border-color: #fff;
+        } 
+        .card:hover {
+            box-shadow: 0px 0px 15px #fff;
+        }
+        .floating-buttons {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 999;
+      }
+
+      .floating-buttons a {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #25d366;
+        text-align: center;
+        line-height: 50px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .floating-buttons a:hover {
+        transform: scale(1.1);
+      }
+
+      .whatsapp-button img,
+      .call-button img {
+        width: 30px;
+        height: 30px;
+      }
+
+      .call-button {
+        background-color: #34b7f1;
+        /* Call button color */
+      }
+
+       /* Slider */
+
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-slider
+{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+    </style>
+        .faq .card-header {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .faq .card-body {
+            background-color: #222;
+        }
+
+        .testimonial {
+            background-color: #222;
+            padding: 40px;
+        }
+
+        .carousel-item {
+            text-align: center;
+        }
+
+        .carousel-item p {
+            font-style: italic;
+        }
+
+        .footer {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background-color: #222;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .contact-form label {
+            color: #fff;
+        }
+
+        .contact-form .form-control {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #444;
+        }
+
+        .contact-form .form-control:focus {
+            box-shadow: 0px 0px 15px #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html">KS Refrigerator Services</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#faq">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#testimonials">Testimonials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner Image -->
+    <section class="banner"> 
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="container mt-5">
+        <h2>About Us</h2>
+        <p>Since 2009, KS Refrigerator Service has been your trusted partner in appliance repair. With expertise spanning over a
+        decade, we specialize in servicing a wide range of appliances, including all types of fridges (Single Door, Double Door,
+        Side-by-Side, and Western Door), washing machines (old, new, and automatic), ovens (from bakery ovens to microwave
+        ovens), and Split ACs. Our commitment to quality service and customer satisfaction ensures your appliances are in good
+        hands, bringing them back to optimal performance with precision and care.</p>
+ 
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="container mt-5">
+        <h2>Our Services</h2>
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://alehsanmt.com/appliance/appliance_icons/fridge.jpg" class="card-img-top" alt="Fridge & Refrigerator Repair">
+                    <div class="card-body">
+                        <h5 class="card-title">Fridge & Refrigerator Repair</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://alehsanmt.com/appliance/appliance_icons/wm.jpg" class="card-img-top" alt="Washing Machine Repair">
+                    <div class="card-body">
+                        <h5 class="card-title">Washing Machine Repair</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://alehsanmt.com/appliance/appliance_icons/oven-01.jpg" class="card-img-top" alt="Oven Repair">
+                    <div class="card-body">
+                        <h5 class="card-title">Microwave Oven Repair</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://alehsanmt.com/appliance/appliance_icons/ac-01.jpg" class="card-img-top" alt="AC Repair">
+                    <div class="card-body">
+                        <h5 class="card-title">Air Conditioner (AC) Repair</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Swiper Section -->
+    <section class="logo-swiper-section py-5">
+        <div class="container">
+            <section class="customer-logos slider">
+                <div class="slide"><img
+                        src="https://assets.gadgets360cdn.com/content/assets/brands/Blue-Star_1617373358.jpg"></div>
+                <div class="slide"><img src="https://assets.gadgets360cdn.com/content/assets/brands/godrej_1617373556.jpg">
+                </div>
+                <div class="slide"><img src="https://assets.gadgets360cdn.com/content/assets/brands/lg_1617875836.jpg">
+                </div>
+                <div class="slide"><img src="https://assets.gadgets360cdn.com/content/assets/brands/Voltas_1617373431.jpg">
+                </div>
+                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/panasonic.png"></div>
+                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/samsung.jpg"></div>
+                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/Lloyd.png"></div>
+                <div class="slide"><img src="https://assets.gadgets360cdn.com/content/assets/brands/Daikin_1617373601.png">
+                </div>
+                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/videocon.png"></div>
+                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/Haier.png"></div>
+                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/hisense.jpg"></div>
+            </section>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="container mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="card faq">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            What is Service 1?
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Service 1 is...
+                    </div>
+                </div>
+            </div>
+            <div class="card faq">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            How do I sign up for Service 2?
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        To sign up for Service 2, you...
+                    </div>
+                </div>
+            </div>
+            <div class="card faq">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            What are the payment options?
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        We accept...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Carousel -->
+    <section id="testimonials" class="testimonial mt-5">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <p>"Great service, highly recommended!"</p>
+                        <h5>- Client 1</h5>
+                    </div>
+                    <div class="carousel-item">
+                        <p>"Excellent support and quick delivery."</p>
+                        <h5>- Client 2</h5>
+                    </div>
+                    <div class="carousel-item">
+                        <p>"They exceeded my expectations!"</p>
+                        <h5>- Client 3</h5>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container mt-5">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Your Email">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-custom">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <span>&copy; 2024 Black Themed Website | <a href="#">Privacy Policy</a></span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</body>
+
+</html>
