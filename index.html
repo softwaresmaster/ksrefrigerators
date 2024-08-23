@@ -237,7 +237,7 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
-    </style>
+     
         .faq .card-header {
             background-color: #333;
             color: #fff;
@@ -381,28 +381,27 @@
     </section>
 
     <!-- Logo Swiper Section -->
-    <section class="logo-swiper-section py-5">
+    <!-- <section class="logo-swiper-section py-5">
         <div class="container">
             <section class="customer-logos slider">
-                <div class="slide"><img
-                        src="https://assets.gadgets360cdn.com/content/assets/brands/Blue-Star_1617373358.jpg"></div>
-                <div class="slide"><img src="https://assets.gadgets360cdn.com/content/assets/brands/godrej_1617373556.jpg">
+                <div class="slide"><img src="https://assets.gadgets360cdn.com/content/assets/brands/Blue-Star_1617373358.jpg"/></div>
+                <div class="slide"><img src="https://assets.gadgets360cdn.com/content/assets/brands/godrej_1617373556.jpg"/>
                 </div>
-                <div class="slide"><img src="https://assets.gadgets360cdn.com/content/assets/brands/lg_1617875836.jpg">
+                <div class="slide"><img src="https://assets.gadgets360cdn.com/content/assets/brands/lg_1617875836.jpg"/>
                 </div>
-                <div class="slide"><img src="https://assets.gadgets360cdn.com/content/assets/brands/Voltas_1617373431.jpg">
+                <div class="slide"><img src="https://assets.gadgets360cdn.com/content/assets/brands/Voltas_1617373431.jpg"/>
                 </div>
-                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/panasonic.png"></div>
-                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/samsung.jpg"></div>
-                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/Lloyd.png"></div>
-                <div class="slide"><img src="https://assets.gadgets360cdn.com/content/assets/brands/Daikin_1617373601.png">
+                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/panasonic.png"/></div>
+                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/samsung.jpg"/></div>
+                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/Lloyd.png"/></div>
+                <div class="slide"><img src="https://assets.gadgets360cdn.com/content/assets/brands/Daikin_1617373601.png"/>
                 </div>
-                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/videocon.png"></div>
-                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/Haier.png"></div>
-                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/hisense.jpg"></div>
+                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/videocon.png"/></div>
+                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/Haier.png"/></div>
+                <div class="slide"><img src="https://cdn.gadgets360.com/content/assets/brands/hisense.jpg"/></div>
             </section>
         </div>
-    </section>
+    </section> -->
 
     <!-- FAQ Section -->
     <section id="faq" class="container mt-5">
@@ -490,7 +489,30 @@
 
     <!-- Contact Section -->
     <section id="contact" class="container mt-5">
-        <h2>Contact Us</h2>
+        <h2>Contact Us</h2><section id="contact" class="container mt-5">
+            <h2>Contact Us</h2>
+            <form class="contact-form" method="POST" action="send_mail.php">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message"
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-custom">Send Message</button>
+            </form>
+        </section>
+
         <form class="contact-form">
             <div class="form-group">
                 <label for="name">Name</label>
@@ -507,11 +529,49 @@
             <button type="submit" class="btn btn-custom">Send Message</button>
         </form>
     </section>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Sanitize input data
+        $name = filter_var(trim($_POST["name"]), FILTER_SANITIZE_STRING);
+        $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+        $phone = filter_var(trim($_POST["phone"]), FILTER_SANITIZE_STRING);
+        $message = filter_var(trim($_POST["message"]), FILTER_SANITIZE_STRING);
+    
+        // Validate input data
+        if (empty($name) || empty($email) || empty($phone) || empty($message)) {
+            echo "Please fill in all required fields.";
+            exit;
+        }
+    
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "Invalid email format.";
+            exit;
+        }
+    
+        if (!preg_match('/^[0-9]{10,15}$/', $phone)) { // Adjust regex as per your requirement
+            echo "Invalid phone number.";
+            exit;
+        }
+    
+        // Prepare the email
+        $to = "ksrefrigerators2024@gmail.com"; // Replace with your email
+        $subject = "New Contact Form Submission from $name";
+        $body = "Name: $name\nEmail: $email\nPhone: $phone\n\nMessage:\n$message";
+        $headers = "From: $email";
+    
+        // Send the email
+        if (mail($to, $subject, $body, $headers)) {
+            echo "Thank you! Your message has been sent.";
+        } else {
+            echo "Sorry, something went wrong. Please try again later.";
+        }
+    }
+    ?>
 
     <!-- Footer -->
     <footer class="footer mt-5">
         <div class="container">
-            <span>&copy; 2024 Black Themed Website | <a href="#">Privacy Policy</a></span>
+            <span>&copy; 2024 KS Refrigerator Service | Designed by <a href="https://alehsanmt.com">Al-Ehsan Media & Tech</a></span>
         </div>
     </footer>
 
