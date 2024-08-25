@@ -23,7 +23,7 @@
         }
     
         // Prepare the email
-        $to = "sahabk105@gmail.com"; // Replace with your email
+        $to = "ksrefrigeratorservices@gmail.com"; // Replace with your email
         $subject = "New Contact Form Submission from $name";
         $body = "Name: $name\nEmail: $email\nPhone: $phone\n\nMessage:\n$message";
         $headers = "From: $email";
