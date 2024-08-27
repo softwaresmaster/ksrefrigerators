@@ -63,11 +63,6 @@
      z-index: 1000;
  }
 
- .footer {
-     background-color: #000;
-     border-bottom: 1px solid #444;
- }
-
  .nav-link {
      color: #fff;
      transition: all 0.3s ease-in-out;
@@ -299,9 +294,11 @@
 
  .footer {
      padding: 20px 0;
-     text-align: center;
+     text-align: left;
+     background-color: #262626;
+     border-bottom: 1px solid #444;
  }
-
+ 
  .footer a {
      color: #fff;
      text-decoration: none;
@@ -756,9 +753,53 @@
     <!-- Footer -->
     <footer class="footer mt-5">
         <div class="container">
-            <span>&copy; 2024 KS Refrigerator Service | Designed by <a href="https://alehsanmt.com">Al-Ehsan Media & Tech</a></span>
-        </div>
+            <div class="row">
+        
+                <!-- Column 1: Our Branch -->
+                <div class="col-md-3">
+                    <h5>Our Branch</h5>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1337.5163983645832!2d78.35777871543168!3d17.3913491163315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDIzJzI4LjYiTiA3OMKwMjEnMjcuOCJF!5e0!3m2!1sen!2sin!4v1724747538437!5m2!1sen!2sin"
+                        width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+        
+                <!-- Column 2: Contact number & address -->
+                <div class="col-md-3">
+                    <h5>Contact & Address</h5>
+                    <a href="tel:+917799309275"><strong>Phone:</strong> +91 7799 309 275</a><br /> 
+                    <a href="mailto:ksrefrigeratorservices@gmail.com"><strong>E-mail:</strong> ksrefrigeratorservices@gmail.com</a> <br />
+                    <a href="https://maps.app.goo.gl/ayRdozXoUkvrcUVs6"><strong>Address:</strong> 5-74, Narsingi, Hyderabad, Telangana-500075.</a>
+                </div>
+        
+                <!-- Column 3: Quick Links -->
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#about" class="text-white">About Us</a></li><br />
+                        <li><a href="#services" class="text-white">Services</a></li><br />
+                        <li><a href="#contact" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Column 4: Services -->
+                <div class="col-md-3">
+                    <h5>Our Services</h5>
+                    <ul>
+                        <li>Refrigerator Repair</li> <br />
+                        <li>Washing Machine Repair</li><br />
+                        <li>Oven Repair</li><br />
+                        <li>AC & VRV/VRF Repair</li>
+                    </ul>
+                </div>
+        
+            </div>
+        </div> 
     </footer>
+    <div class="container text-center">
+        <span>&copy; 2024 KS Refrigerator Service | Designed by <a href="https://alehsanmt.com">Al-Ehsan Media &
+                Tech.</a></span>
+    </div>
 
     <div class="floating-buttons">
         <a href="https://wa.me/+917799309275" target="_blank" class="whatsapp-button">
