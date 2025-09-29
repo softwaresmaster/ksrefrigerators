@@ -1,0 +1,194 @@
+/* Base font and smooth scrolling */
+body {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+.hero {
+  background: url("assets/img/home.jpg") center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 8px black;
+}
+.btn-custom {
+  background-color: #5031fe;
+  color: white;
+  border: none;
+}
+.btn-custom:hover {
+  background-color: #3615f1;
+}
+.logo-slider {
+  overflow: hidden;
+  background: #f8f9fa;
+  padding: 20px 0;
+  position: relative;
+}
+
+.logo-track {
+  display: flex;
+  animation: scroll-rtl 40s linear infinite;
+  width: max-content;
+}
+
+.logo-track img {
+  height: 60px;
+  margin: 0 40px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.logo-track img:hover {
+  filter: grayscale(0%);
+}
+
+@keyframes scroll-rtl {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.topbar {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  font-size: 14px;
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.topbar .social-icons a {
+  color: #000;
+  margin-left: 10px;
+  transition: color 0.2s;
+}
+
+.topbar .social-icons a:hover {
+  color: #5031fe;
+}
+
+.navbar {
+  background-color: rgba(93, 115, 255, 0.614) !important;
+  backdrop-filter: blur(6px);
+}
+
+.navbar .nav-link,
+.navbar-brand {
+  color: #000 !important;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.sticky-top {
+  top: 0;
+  z-index: 1030;
+}
+/* Navbar brand animation on hover */
+.navbar-brand:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button hover glow effect */
+.btn-primary,
+.btn-outline-primary {
+  transition: 0.4s ease;
+}
+.btn-primary:hover,
+.btn-outline-primary:hover {
+  box-shadow: 0 0 10px rgba(93, 115, 255, 0.614) !important;
+  transform: scale(1.02);
+}
+
+/* Hero Section Animation */
+.hero-section {
+  background: linear-gradient(135deg, #5031fe, #6610f2);
+  color: #fff;
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 1%,
+    transparent 60%
+  );
+  z-index: 0;
+}
+.hero-section h1,
+.hero-section p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Card hover effects */
+.service-card,
+.team-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover,
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer links animation */
+footer a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Contact info icon styling */
+.contact-info i {
+  color: #5031fe;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+/* Animation: fade-in */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Delays for sequential animation */
+.fade-in-delay-1 {
+  animation-delay: 0.2s;
+}
+.fade-in-delay-2 {
+  animation-delay: 0.4s;
+}
+.fade-in-delay-3 {
+  animation-delay: 0.6s;
+}
+.fade-in-delay-4 {
+  animation-delay: 0.8s;
+}
